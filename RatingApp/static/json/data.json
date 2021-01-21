@@ -1,0 +1,24 @@
+{
+    "employees":[
+        {
+            "Name":"John Smith",
+            "ID":101,
+            "Role":"Lead Technician",
+            "Salary":100000.50,
+            "Team":[
+                {
+                    "MembersCount":6,
+                    "TeamLeader":null
+                }
+            ]
+        },
+        {
+            "Name":"Jane Doe",
+            "ID":102,
+            "Role":"HR",
+            "Salary":50000.25,
+            "Team":false
+        }
+    ]
+}
+

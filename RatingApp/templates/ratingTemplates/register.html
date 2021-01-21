@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    <h4 class='alert alert-info'>Navigation Panel</h4>
+    <div class='container m-auto'>
+        <a href="{% url 'home' %}" class='btn btn-danger mb-2'> Home page</a>
+        <a href="{% url 'login' %}" class='btn btn-primary'> Login Form</a>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container m-3 p-3">
+    <form class="form-group card p-3" action="" method="post" style="border:1px solid #bbb; box-shadow: 2px 2px 5px -1px rgba(0,0,0,.7);">
+        <h3 class="mb-3 ml-5">Sign Up</h3>
+        {% csrf_token %}
+        <span class="">
+          {{ form.errors }}
+        </span>
+        
+        <table style="width:90%; margin:5px auto" class="container">
+          <tr class="row"><td class="col-sm-9 ml-3 pb-3">{{ form.username.label }}{{ form.username }}</td></tr>
+          <tr class="row"><td class="col-sm-9 ml-3 pb-3">{{ form.email.label }}{{ form.email }}</td></tr>
+          <tr class="row"><td class="col-sm-4 ml-3 pb-3">{{ form.password1.label }}<br>{{ form.password1 }}</td><td class="col-auto ml-3">{{ form.password2.label }}<br>{{ form.password2 }}</td></tr>
+        </table><br>
+        <p class="ml-5 mb-2"><input type="submit" name="submit" value="Submit" class="btn btn-primary ml-2 mb-2"></p>
+        <p class="ml-5 mb-3">Have an Account? <a href="{% url 'login' %}" style="color:dodgerblue;" class="">Login</a></p>
+    </form>
+</div>
+
+{% endblock %}

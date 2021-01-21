@@ -1,0 +1,25 @@
+.home__mainBody{
+    height:35em; 
+    background: url('../images/bg.png')0px 100px no-repeat; 
+    background-size: cover;
+}
+
+.product-card:hover{
+    background-color: #faf8fa;
+}
+
+.nav-item a .nav-link:hover{
+    color: yellow;
+}
+
+input > .input-field{
+    width: 70%;
+    align-content: center;
+}
+
+.colored{
+    color:orange;
+}
+ul.nav-tabs > li.nav-item > a.active{
+    color: orangered;
+}

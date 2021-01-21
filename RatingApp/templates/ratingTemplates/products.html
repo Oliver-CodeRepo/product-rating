@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <h1>Rating App Products page</h1> -->
+<div class="container" style="display: flex;">
+    <div class="row">
+        {% for products in object_list %}
+        <div class="col-sm-4 col-md-4 card  m-3" style=' box-shadow: 1px 2px 2px -1px rgba(0,0,0,0.7);'>
+            <div class="card-body">
+                <h5>{{ products.p_name }} &nbsp;&nbsp;&nbsp;
+                    <small class="pull-right" style="width: 40%;">
+                        <span class="fa fa-star colored"></span>
+                        <span class="fa fa-star colored"></span>
+                        <span class="fa fa-star colored"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    </small>
+                    
+                </h5>
+                <img src="{{products.image.url}}" alt="" width='70%' height='80'>
+                <p style="text-align: justify-center; font-style: italic;">Description <br><small>{{ products.description|slice:":80" }}...
+                <a href="{% url 'product-details' products.slug %}">View More</a> </small></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock %}

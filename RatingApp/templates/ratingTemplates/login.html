@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block sidebar %}
+    <h4 class='alert alert-info'>Navigation Panel</h4>
+    <div class='container m-auto'>
+        <a href="{% url 'home' %}" class=' mb-2'>Home page</a><br>
+        <a href="{% url 'register' %}" class=''> Registration Form</a>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container m-3 p-3">
+    <form class="form-group card p-3" action="" method="post" style="border:1px solid #bbb; box-shadow: 2px 2px 3px -1px rgba(0,0,0,.7);">
+            <h3 class="mb-2 ml-5">Login Form</h3>
+            <dic class="container">
+                {% for msg in messages %}
+                    {% if msg == messages.success %}
+                    <h5 class="alert alert-info">{{msg}}</h5>
+                    {% else %}
+                    <h5 class="alert alert-info">{{ msg }}</h5>
+                    {% endif %}
+                {% endfor %}
+            </dic>
+            
+            <div class="container ml-5">
+                
+                {% csrf_token %}
+                Username <br> <input type="text" name="username" id="" class="form-control" style="width:70%;"><br>
+                Password <br> <input type="password" name="password" id="" class="form-control" style="width:70%;"><br>
+            </div>
+            <p class="ml-5 mb-2"><input type="submit" name="submit" value="Submit" class="btn btn-primary ml-2 mb-2"></p>
+            <p class="ml-5 mb-3">Have No Account? <a href="{% url 'register' %}" style="color:dodgerblue;" class="">Register</a></p>
+    </form>
+</div>
+
+{% endblock %}
